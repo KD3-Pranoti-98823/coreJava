@@ -1,0 +1,90 @@
+package com.sunbeam;
+
+class Employee {
+
+    private String firstName;
+    private String lastName;
+    private double monthlySalary;
+
+ 
+    public Employee(String firstName, String lastName, double monthlySalary) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+        if (monthlySalary > 0)
+            this.monthlySalary = monthlySalary;
+    }
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	public double getMonthlySalary() {
+		return monthlySalary;
+	}
+
+
+	public void setMonthlySalary(double monthlySalary) {
+		this.monthlySalary = monthlySalary;
+	}
+	
+    
+
+   
+}
+
+
+public class EmployeeTest {
+
+    public static void main(String[] args) {
+
+        Employee emp1 = new Employee("Akshay", "Chavan", 50000);
+        Employee emp2 = new Employee("Pavan", "patil", 60000);
+
+        // Yearly salary before raise
+        System.out.println("Employee 1: " 
+                + emp1.getFirstName() + " " + emp1.getLastName());
+
+        System.out.println("Yearly Salary: " 
+                + (emp1.getMonthlySalary() * 12));
+
+        System.out.println();
+
+        System.out.println("Employee 2: " 
+                + emp2.getFirstName() + " " + emp2.getLastName());
+
+        System.out.println("Yearly Salary: " 
+                + (emp2.getMonthlySalary() * 12));
+
+        // Give 10% raise
+        emp1.setMonthlySalary(emp1.getMonthlySalary() * 1.10);
+        emp2.setMonthlySalary(emp2.getMonthlySalary() * 1.10);
+
+        // Yearly salary after raise
+        System.out.println("\nAfter 10% Raise:");
+
+        System.out.println("Employee 1 Yearly Salary: " 
+                + (emp1.getMonthlySalary() * 12));
+
+        System.out.println("Employee 2 Yearly Salary: " 
+                + (emp2.getMonthlySalary() * 12));
+    }
+}
